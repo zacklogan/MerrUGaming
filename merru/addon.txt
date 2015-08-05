@@ -1,0 +1,9 @@
+"AddonInfo"
+{
+	"name"				"ULX MERRU" 
+	"version"			"1.0"
+	"author_name"		"Logan"
+	"author_email"		"zacklogan@richcraftnetwork.info"
+	"author_url"		"N/A"
+	"info"				"MERRUGAMING ULX"
+}
