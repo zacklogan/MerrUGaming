@@ -13,7 +13,7 @@ function ulx.arrest( calling_ply, target_ply )
 	if target_ply:isArrested() == true then
 		ULib.tsayError( calling_ply, "That player is already arrested!", true )
 	else
-		RunConsoleCommand( "rp_arrest", name )
+		RunConsoleCommand( "rp_arrest ", name )
 		ulx.fancyLogAdmin( calling_ply, false, "#A force-arrested #T", target_ply )
 	end
 end
@@ -25,7 +25,7 @@ arrest:help( "Arrests a player." )
 function ulx.unarrest( calling_ply, target_ply )
 	local name = target_ply:GetName()
 	if target_ply:isArrested() == true then
-	RunConsoleCommand( "rp_unarrest", name )
+	RunConsoleCommand( "rp_unarrest ", name )
 	ulx.fancyLogAdmin( calling_ply, false, "#A force-unarrested #T", target_ply )
 	else
 		ULib.tsayError( calling_ply, "That player is not arrested!", true )
@@ -98,3 +98,27 @@ rpName:addParam{ type=ULib.cmds.PlayerArg }
 rpName:addParam{ type=ULib.cmds.StringArg, hint="John Doe", ULib.cmds.takeRestOfLine }
 rpName:defaultAccess( ULib.ACCESS_SUPERADMIN )
 rpName:help( "Set a persons RP name." )
+
+-------------------------------------------------------
+-- ClearDecals
+-------------------------------------------------------
+
+function ulx.cleardecals( calling_ply )
+	RunConsoleCommand( "fadmin cleardecals" )
+	ulx.fancyLogAdmin( calling_ply, "#A cleared decals." )
+end
+local clearDecals = ulx.command( CATEGORY_NAME, "ulx cleardecals", ulx.cleardecals, "!cleardecals" )
+clearDecals:defaultAccess( ULib.ACCESS_SUPERADMIN )
+clearDecals:help( "Clear the maps decals" )
+
+-------------------------------------------------------
+-- ClearDecals
+-------------------------------------------------------
+
+function ulx.cleardecals( calling_ply )
+	RunConsoleCommand( "fadmin cleardecals" )
+	ulx.fancyLogAdmin( calling_ply, "#A cleared decals." )
+end
+local clearDecals = ulx.command( CATEGORY_NAME, "ulx cleardecals", ulx.cleardecals, "!cleardecals" )
+clearDecals:defaultAccess( ULib.ACCESS_SUPERADMIN )
+clearDecals:help( "Clear the maps decals" )
