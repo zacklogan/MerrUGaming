@@ -109,16 +109,16 @@ function ulx.cleardecals( calling_ply )
 end
 local clearDecals = ulx.command( CATEGORY_NAME, "ulx cleardecals", ulx.cleardecals, "!cleardecals" )
 clearDecals:defaultAccess( ULib.ACCESS_SUPERADMIN )
-clearDecals:help( "Clear the maps decals" )
+clearDecals:help( "Clear the maps decals." )
 
 -------------------------------------------------------
--- ClearDecals
+-- CleanUp
 -------------------------------------------------------
 
-function ulx.cleardecals( calling_ply )
-	RunConsoleCommand( "fadmin cleardecals" )
-	ulx.fancyLogAdmin( calling_ply, "#A cleared decals." )
+function ulx.cleanup( calling_ply )
+	RunConsoleCommand( "fadmin cleanup" )
+	ulx.fancyLogAdmin( calling_ply, "#A cleaned the map." )
 end
-local clearDecals = ulx.command( CATEGORY_NAME, "ulx cleardecals", ulx.cleardecals, "!cleardecals" )
-clearDecals:defaultAccess( ULib.ACCESS_SUPERADMIN )
-clearDecals:help( "Clear the maps decals" )
+local cleanUp = ulx.command( CATEGORY_NAME, "ulx cleanup", ulx.cleanup, "!cleanup" )
+cleanUp:defaultAccess( ULib.ACCESS_SUPERADMIN )
+cleanUp:help( "Clean up the map." )
