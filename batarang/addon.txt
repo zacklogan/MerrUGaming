@@ -1,0 +1,7 @@
+// Extracted with MulleDK19's GMAD Extractor
+"AddonInfo"
+{
+	"name" "Batarang SWEP"
+	"author_name" "Author Name"
+	"info" " { 	"description": "A batarang SWEP. Based on shuriken SWEP by jaanus. Compatible with custom hands.", 	"type": "weapon", 	"tags":  	[ 		"roleplay", 		"fun" 	] }"
+}
