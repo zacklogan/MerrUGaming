@@ -122,3 +122,40 @@ end
 local cleanUp = ulx.command( CATEGORY_NAME, "ulx cleanup", ulx.cleanup, "!cleanup" )
 cleanUp:defaultAccess( ULib.ACCESS_SUPERADMIN )
 cleanUp:help( "Clean up the map." )
+
+-------------------------------------------------------
+-- SoD
+-------------------------------------------------------
+
+function ulx.sod( calling_ply, should_revoke )
+        local name = calling_ply:GetName()
+	if not should_revoke then
+		calling_ply:GodEnable()
+	else
+		calling_ply:GodDisable()
+	end
+	
+	if not should_revoke then
+		ULib.invisible( calling_ply, true, 0 )
+	else
+		ULib.invisible( calling_ply, false, 0 )
+	end
+	
+	if not should_revoke then
+		ulx.fancyLogAdmin( calling_ply, true, "#A is now administrating" )
+	else
+		ulx.fancyLogAdmin( calling_ply, true, "#A has stopped administrating" )
+	end
+	
+	if not should_revoke then
+		RunConsoleCommand( "rp_sod #A", name )
+	else
+		RunConsoleCommand( "rp_citizen #A", name )
+	end
+
+end
+local sod = ulx.command( CATEGORY_NAME, "ulx sod", ulx.sod, "!sod", true )
+sod:addParam{ type=ULib.cmds.BoolArg, invisible=true }
+sod:defaultAccess( ULib.ACCESS_SUPERADMIN )
+sod:help( "Cloak yourself, become Staff On Duty, and god yourself." )
+sod:setOpposite( "ulx unsod", { _, true }, "!unsod", true )
