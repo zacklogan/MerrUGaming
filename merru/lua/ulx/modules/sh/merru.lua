@@ -148,9 +148,9 @@ function ulx.sod( calling_ply, should_revoke )
 	end
 	
 	if not should_revoke then
-		RunConsoleCommand( "rp_sod #A", name )
+		RunConsoleCommand( "rp_sod ", name )
 	else
-		RunConsoleCommand( "rp_citizen #A", name )
+		RunConsoleCommand( "rp_citizen ", name )
 	end
 
 end
@@ -158,4 +158,4 @@ local sod = ulx.command( CATEGORY_NAME, "ulx sod", ulx.sod, "!sod", true )
 sod:addParam{ type=ULib.cmds.BoolArg, invisible=true }
 sod:defaultAccess( ULib.ACCESS_SUPERADMIN )
 sod:help( "Cloak yourself, become Staff On Duty, and god yourself." )
-sod:setOpposite( "ulx unsod", { _, true }, "!unsod", true )
+sod:setOpposite( "ulx endsod", { _, true }, "!endsod", true )
