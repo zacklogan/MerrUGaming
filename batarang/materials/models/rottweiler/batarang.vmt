@@ -1,9 +1,0 @@
-"VertexlitGeneric"
-{
-	"$basetexture"	"models\rottweiler\batarang"
-	"$vertexcolor" "1"
-	"$phong" "1"
-	"$phongexponent" "5"
-	"$phongboost" "5"
-	"$phongfresnelranges" "[0.1 0.2 0.5]"
-}
